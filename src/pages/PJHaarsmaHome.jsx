@@ -703,7 +703,7 @@ const CSS = `
 }
 .pjh .pjh-logo {
   display: inline-flex; align-items: center; min-width: 0;
-  font-family: var(--font-sfx); font-weight: 400; font-size: 1.55rem;
+  font-family: var(--font-sfx); font-weight: 400; font-size: 2.35rem;
   letter-spacing: .03em; line-height: 1; color: #fff; white-space: nowrap;
 }
 .pjh-logo__img { display: block; height: 48px; width: auto; max-width: min(220px, 52vw); }
@@ -886,7 +886,7 @@ const CSS = `
   .pjh-nav__links { display: none; }
   .pjh-nav__burger { display: flex; }
   .pjh-nav__inner { padding: 0 1rem; gap: .6rem; }
-  .pjh .pjh-logo { font-size: 1.25rem; }
+  .pjh .pjh-logo { font-size: 1.85rem; }
   .pjh-nav__search-form input { width: 7.5rem; color: #fff; }
   .pjh-band.pjh-band--paper.pjh-band--none { padding-block: 2rem 2.4rem; }
   .pjh-band .pjh-hero {

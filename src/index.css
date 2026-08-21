@@ -533,7 +533,7 @@ p {
   min-width: 0;
   font-family: var(--font-sfx);
   font-weight: 400;
-  font-size: 1.55rem;
+  font-size: 2.35rem;
   letter-spacing: 0.03em;
   line-height: 1;
   color: #fff;
@@ -1310,7 +1310,7 @@ p {
   }
 
   .pjh .pjh-logo {
-    font-size: 1.25rem;
+    font-size: 1.85rem;
   }
 
   .pjh-nav__search-form input {
