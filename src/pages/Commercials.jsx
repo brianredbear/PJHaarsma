@@ -4,16 +4,16 @@ import RedbearBears from '../components/RedbearBears.jsx'
 import Seo from '../components/Seo.jsx'
 
 const CLIENTS = [
-  { src: '/original/commercials/tcb.webp', alt: 'Taco Bell' },
-  { src: '/original/commercials/sce.webp', alt: 'Southern California Edison' },
-  { src: '/original/commercials/ps.webp', alt: 'Public Storage' },
-  { src: '/original/commercials/lz.webp', alt: 'LegalZoom' },
-  { src: '/original/commercials/hp.webp', alt: 'HP' },
-  { src: '/original/commercials/bb.webp', alt: 'Best Buy' },
-  { src: '/original/commercials/inv.webp', alt: 'Invisalign' },
-  { src: '/original/commercials/frima.webp', alt: 'Frima' },
-  { src: '/original/commercials/il.webp', alt: 'iLASIK' },
-  { src: '/original/commercials/hn.webp', alt: 'Health Net' },
+  { src: '/original/commercials/tcb.avif', alt: 'Taco Bell' },
+  { src: '/original/commercials/sce.avif', alt: 'Southern California Edison' },
+  { src: '/original/commercials/ps.avif', alt: 'Public Storage' },
+  { src: '/original/commercials/lz.avif', alt: 'LegalZoom' },
+  { src: '/original/commercials/hp.avif', alt: 'HP' },
+  { src: '/original/commercials/bb.avif', alt: 'Best Buy' },
+  { src: '/original/commercials/inv.avif', alt: 'Invisalign' },
+  { src: '/original/commercials/frima.avif', alt: 'Frima' },
+  { src: '/original/commercials/il.avif', alt: 'iLASIK' },
+  { src: '/original/commercials/hn.avif', alt: 'Health Net' },
 ]
 
 export default function Commercials() {
@@ -23,14 +23,15 @@ export default function Commercials() {
         title="Commercials | PJ Haarsma"
         description="PJ Haarsma is founder of Redbear Films. Commercial director and producer for brands including Taco Bell, HP, Best Buy, LegalZoom, and Southern California Edison."
         path="/commercial-production"
-        image="/original/commercials.webp"
+        image="/original/commercials.avif"
       />
       <section className="pjh-g-band pjh-g-band--paper pjh-g-band--lead" aria-labelledby="pjh-c-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/commercials.webp"
+            src="/original/commercials.avif"
             alt="Not all superheroes wear capes, some wear kilts"
             tilt="left"
+            eager
           />
           <div className="pjh-g-copy" data-reveal data-reveal-delay="120">
             <span className="pjh-g-kicker">Advertising</span>
@@ -83,7 +84,7 @@ export default function Commercials() {
             <div className="pjh-g-redbear">
               <RedbearBears />
               <figure className="pjh-g-frame pjh-g-frame--paper">
-                <img src="/original/commercials/redbear.webp" alt="Redbear Films" />
+                <img src="/original/commercials/redbear.avif" alt="Redbear Films" loading="lazy" decoding="async" />
               </figure>
             </div>
           </div>
@@ -167,7 +168,7 @@ export default function Commercials() {
           <div className="pjh-g-logos" data-reveal data-reveal-delay="80">
             {CLIENTS.map((client) => (
               <figure key={client.alt} className="pjh-g-logo">
-                <img src={client.src} alt={client.alt} />
+                <img src={client.src} alt={client.alt} loading="lazy" decoding="async" />
               </figure>
             ))}
           </div>

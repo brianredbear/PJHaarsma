@@ -95,11 +95,17 @@ function WorkCopy({ kicker, title, children, href, button = 'yellow', headingId 
   )
 }
 
-function WorkFrame({ src, alt, tilt = 'left' }) {
+function WorkFrame({ src, alt, tilt = 'left', eager = false }) {
   return (
     <div className="pjh-work__reveal" data-reveal data-reveal-delay="120">
       <div className={`pjh-work__frame pjh-work__frame--${tilt}`}>
-        <img src={src} alt={alt} />
+        <img
+          src={src}
+          alt={alt}
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchPriority={eager ? 'high' : 'low'}
+        />
       </div>
     </div>
   )
@@ -114,7 +120,7 @@ export default function PJHaarsmaHome() {
         title="PJ Haarsma — Producer, Novelist, Game Creator"
         description="PJ Haarsma is an Emmy-winning producer, science fiction novelist, and game creator. Founder of Redbear Films."
         path="/"
-        image="/original/tv-portrait.webp"
+        image="/original/tv-portrait.avif"
       />
       <style>{CSS}</style>
       <RevealOnScroll />
@@ -207,9 +213,10 @@ export default function PJHaarsmaHome() {
               </p>
             </WorkCopy>
             <WorkFrame
-              src="/original/tv-portrait.webp?v=2"
+              src="/original/tv-portrait.avif?v=2"
               alt="Alan Tudyk adrift in a paper boat above a giant creature"
               tilt="left"
+              eager
             />
           </div>
         </div>
@@ -218,7 +225,7 @@ export default function PJHaarsmaHome() {
       <section className="pjh-work pjh-work--paper pjh-work--commercials" aria-labelledby="pjh-commercials-heading">
         <div className="pjh-work__inner pjh-work__inner--flip">
           <WorkFrame
-            src="/original/commercials.webp?v=2"
+            src="/original/commercials.avif?v=2"
             alt="Not all superheroes wear capes, some wear kilts"
             tilt="left"
           />
@@ -244,7 +251,7 @@ export default function PJHaarsmaHome() {
             </p>
           </WorkCopy>
           <WorkFrame
-            src="/original/games.webp?v=2"
+            src="/original/games.avif?v=2"
             alt="Fans chase convention guests in a comic book panel"
             tilt="right"
           />
@@ -254,7 +261,7 @@ export default function PJHaarsmaHome() {
       <section className="pjh-work pjh-work--paper pjh-work--comics" aria-labelledby="pjh-comics-heading">
         <div className="pjh-work__inner pjh-work__inner--flip">
           <WorkFrame
-            src="/original/comics.webp"
+            src="/original/comics.avif"
             alt="Spectrum comic issue covers"
             tilt="left"
           />
@@ -271,7 +278,7 @@ export default function PJHaarsmaHome() {
       <section className="pjh-work pjh-work--books" aria-labelledby="pjh-books-heading">
         <div className="pjh-work__inner pjh-work__inner--flip">
           <WorkFrame
-            src="/original/books.webp"
+            src="/original/books.avif"
             alt="The Softwire book covers"
             tilt="right"
           />

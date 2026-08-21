@@ -9,14 +9,15 @@ export default function Comics() {
         title="Comic Books | PJ Haarsma"
         description="PJ Haarsma writes Spectrum with Alan Tudyk, set in the Softwire universe. The Madefire motion comic won Digital Comic of the Year."
         path="/comic-books"
-        image="/original/comics.webp"
+        image="/original/comics.avif"
       />
       <section className="pjh-g-band pjh-g-band--paper pjh-g-band--lead" aria-labelledby="pjh-cx-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/comics.webp"
+            src="/original/comics.avif"
             alt="Spectrum comic issue covers"
             tilt="left"
+            eager
           />
           <div className="pjh-g-copy" data-reveal data-reveal-delay="120">
             <span className="pjh-g-kicker">In Print</span>
@@ -65,13 +66,13 @@ export default function Comics() {
           </div>
           <div className="pjh-g-cover-pair">
             <Frame
-              src="/original/comics/spectrum-0.webp"
+              src="/original/comics/spectrum-0.avif"
               alt="Spectrum issue 0 cover, written by PJ Haarsma and Alan Tudyk"
               href="https://store.conmantheseries.com/products/spectrum-comic-issue-0"
               tilt="left"
             />
             <Frame
-              src="/original/comics/spectrum-1.webp"
+              src="/original/comics/spectrum-1.avif"
               alt="Spectrum issue 1"
               href="https://store.conmantheseries.com/products/spectrum-comic-issue-1"
               tilt="right"
@@ -99,7 +100,7 @@ export default function Comics() {
             </div>
           </div>
           <Frame
-            src="/original/comics/award.webp"
+            src="/original/comics/award.avif"
             alt="Pipedream Comics presents Digital Comic of the Year"
             tilt="right"
             tone="clear"

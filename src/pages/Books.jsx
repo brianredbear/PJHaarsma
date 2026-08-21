@@ -6,7 +6,7 @@ const NOVELS = [
   {
     kicker: '2006',
     title: 'Virus on Orbis 1',
-    src: '/original/books/virus.webp',
+    src: '/original/books/virus.avif',
     alt: 'Virus on Orbis 1 cover',
     band: 'paper',
     flip: true,
@@ -28,7 +28,7 @@ const NOVELS = [
   {
     kicker: '2008',
     title: 'Betrayal on Orbis 2',
-    src: '/original/books/betrayal.webp',
+    src: '/original/books/betrayal.avif',
     alt: 'Betrayal on Orbis 2 cover',
     band: 'gold',
     flip: false,
@@ -44,7 +44,7 @@ const NOVELS = [
   {
     kicker: '2009',
     title: 'Wormhole Pirates on Orbis 3',
-    src: '/original/books/pirates.webp',
+    src: '/original/books/pirates.avif',
     alt: 'Wormhole Pirates on Orbis 3 cover',
     band: 'paper',
     flip: true,
@@ -60,7 +60,7 @@ const NOVELS = [
   {
     kicker: '2010',
     title: 'Awakening on Orbis 4',
-    src: '/original/books/awakening.webp',
+    src: '/original/books/awakening.avif',
     alt: 'Awakening on Orbis 4 cover',
     band: 'gold',
     flip: false,
@@ -77,19 +77,19 @@ const NOVELS = [
 
 const GUIDES = [
   {
-    src: '/original/books/teacher.webp',
+    src: '/original/books/teacher.avif',
     alt: 'Softwire teacher’s study guide',
     href: 'https://pjhaarsma.com/softwire-guides/Softwire_novel_study_sm.pdf.zip',
     label: 'Free teacher’s study guide',
   },
   {
-    src: '/original/books/discussion.webp',
+    src: '/original/books/discussion.avif',
     alt: 'Softwire small discussion guide',
     href: 'https://pjhaarsma.com/softwire-guides/softwire_discussion_guide.pdf.zip',
     label: 'Free small discussion guide',
   },
   {
-    src: '/original/books/jaal.webp',
+    src: '/original/books/jaal.avif',
     alt: 'JAAL review of The Softwire',
     href: 'https://pjhaarsma.com/softwire-guides/Journal-Adolescent-Adult-Literacy-PJ-Haarsma-interview.pdf.zip',
     label: 'Read the JAAL review',
@@ -151,14 +151,15 @@ export default function Books() {
         title="Books | PJ Haarsma"
         description="The Softwire quartet from Candlewick / Random House: Virus on Orbis 1, Betrayal on Orbis 2, Wormhole Pirates on Orbis 3, and Awakening on Orbis 4."
         path="/pj-haarsma-books"
-        image="/original/books.webp"
+        image="/original/books.avif"
       />
       <section className="pjh-g-band pjh-g-band--ink pjh-g-band--lead" aria-labelledby="pjh-bk-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/books.webp"
+            src="/original/books.avif"
             alt="The Softwire book covers"
             tilt="right"
+            eager
           />
           <div className="pjh-g-copy" data-reveal data-reveal-delay="120">
             <span className="pjh-g-kicker">Novels</span>

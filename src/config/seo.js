@@ -10,7 +10,7 @@ export const ALLOW_INDEXING = import.meta.env.VITE_ALLOW_INDEXING === 'true'
 export const DEFAULT_TITLE = 'PJ Haarsma — Producer, Novelist, Game Creator'
 export const DEFAULT_DESCRIPTION =
   'PJ Haarsma is an Emmy-winning producer, science fiction novelist, and game creator. Founder of Redbear Films.'
-export const DEFAULT_IMAGE = '/original/tv-portrait.webp'
+export const DEFAULT_IMAGE = '/original/tv-portrait.avif'
 
 export function absUrl(path = '/') {
   const normalized = path.startsWith('/') ? path : `/${path}`

@@ -17,10 +17,16 @@ export function Heading({ as: Tag = 'h2', id, children }) {
   )
 }
 
-export function Frame({ src, alt, tilt = 'left', tone, delay, href, size }) {
+export function Frame({ src, alt, tilt = 'left', tone, delay, href, size, eager = false }) {
   const figure = (
     <figure className={`pjh-g-frame pjh-g-frame--${tilt}${tone ? ` pjh-g-frame--${tone}` : ''}${size ? ` pjh-g-frame--${size}` : ''}`}>
-      <img src={src} alt={alt} />
+      <img
+        src={src}
+        alt={alt}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        fetchPriority={eager ? 'high' : 'low'}
+      />
     </figure>
   )
 

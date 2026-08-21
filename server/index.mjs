@@ -24,6 +24,7 @@ const TYPES = {
   '.xml': 'application/xml; charset=utf-8',
   '.webm': 'video/webm',
   '.webp': 'image/webp',
+  '.avif': 'image/avif',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
 }

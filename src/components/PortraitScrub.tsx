@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 const FRAME_COUNT = 111
 
 function frameSrc(index: number) {
-  return `/hero-frames/frame-${String(index).padStart(3, '0')}.webp?v=full`
+  return `/hero-frames/frame-${String(index).padStart(3, '0')}.avif?v=full`
 }
 
 export default function PortraitScrub() {
@@ -15,14 +15,17 @@ export default function PortraitScrub() {
     const ctx = canvas.getContext('2d', { alpha: false })
     if (!ctx) return
 
-    const frames = Array.from({ length: FRAME_COUNT }, (_, index) => {
-      const image = new Image()
-      image.src = frameSrc(index)
-      return image
-    })
-
+    const frames = Array.from({ length: FRAME_COUNT }, () => new Image())
+    let loadedRest = false
     let current = 0
     let raf = 0
+    let idleId = 0
+
+    const assign = (index: number) => {
+      const image = frames[index]
+      if (!image.src) image.src = frameSrc(index)
+      return image
+    }
 
     const draw = (index: number) => {
       const image = frames[index]
@@ -37,10 +40,18 @@ export default function PortraitScrub() {
 
     const show = (index: number) => {
       current = index
+      assign(index)
       if (!raf) raf = requestAnimationFrame(apply)
     }
 
+    const loadRest = () => {
+      if (loadedRest) return
+      loadedRest = true
+      for (let i = 1; i < FRAME_COUNT; i += 1) assign(i)
+    }
+
     const fromX = (x: number) => {
+      loadRest()
       const progress = Math.min(1, Math.max(0, x / window.innerWidth))
       show(Math.round(progress * (FRAME_COUNT - 1)))
     }
@@ -54,25 +65,25 @@ export default function PortraitScrub() {
       if (touch) fromX(touch.clientX)
     }
 
-    frames.forEach((image, index) => {
-      if (image.complete) {
-        if (index === 0) draw(0)
-        return
-      }
-      image.addEventListener(
-        'load',
-        () => {
-          if (index === current) draw(index)
-        },
-        { once: true },
-      )
-    })
+    const first = assign(0)
+    const onFirstLoad = () => draw(0)
+    if (first.complete) draw(0)
+    else first.addEventListener('load', onFirstLoad, { once: true })
+
+    if ('requestIdleCallback' in window) {
+      idleId = window.requestIdleCallback(loadRest, { timeout: 1500 })
+    } else {
+      idleId = window.setTimeout(loadRest, 250)
+    }
 
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('touchmove', onTouchMove, { passive: true })
 
     return () => {
       if (raf) cancelAnimationFrame(raf)
+      if ('requestIdleCallback' in window) window.cancelIdleCallback(idleId)
+      else window.clearTimeout(idleId)
+      first.removeEventListener('load', onFirstLoad)
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('touchmove', onTouchMove)
     }

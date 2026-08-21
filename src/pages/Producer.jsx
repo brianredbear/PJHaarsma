@@ -17,15 +17,16 @@ export default function Producer() {
         title="Producer | PJ Haarsma"
         description="Emmy-winning producer and founder of Redbear Films. Film, television, and brand work from a Southern California company rooted in commercials and original series."
         path="/pj-haarsma-producer"
-        image="/original/producer.webp"
+        image="/original/producer.avif"
       />
 
       <section className="pjh-g-band pjh-g-band--paper pjh-g-band--lead" aria-labelledby="pjh-p-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/producer.webp"
+            src="/original/producer.avif"
             alt="PJ Haarsma"
             tilt="left"
+            eager
           />
           <div className="pjh-g-copy" data-reveal data-reveal-delay="120">
             <Heading as="h1" id="pjh-p-hero-heading">Producer</Heading>
@@ -60,7 +61,7 @@ export default function Producer() {
             </div>
           </div>
           <Frame
-            src="/original/commercials.webp?v=2"
+            src="/original/commercials.avif?v=2"
             alt="Not all superheroes wear capes, some wear kilts"
             tilt="right"
             delay={120}
@@ -71,7 +72,7 @@ export default function Producer() {
       <section className="pjh-g-band pjh-g-band--paper" aria-labelledby="pjh-p-conman-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/tv/season-1.webp"
+            src="/original/tv/season-1.avif"
             alt="Con Man Season One poster: Alan Tudyk under an umbrella as UFOs attack"
             tilt="left"
             size="md"
@@ -131,7 +132,7 @@ export default function Producer() {
             <div className="pjh-g-redbear">
               <RedbearBears />
               <figure className="pjh-g-frame pjh-g-frame--paper">
-                <img src="/original/commercials/redbear.webp" alt="Redbear Films" />
+                <img src="/original/commercials/redbear.avif" alt="Redbear Films" loading="lazy" decoding="async" />
               </figure>
             </div>
           </div>
@@ -158,12 +159,12 @@ export default function Producer() {
           </div>
           <div className="pjh-g-cover-pair">
             <Frame
-              src="/original/games/con-man-wray.webp"
+              src="/original/games/con-man-wray.avif"
               alt="Wray Nerely from Con Man: The Game"
               tilt="left"
             />
             <Frame
-              src="/original/comics.webp"
+              src="/original/comics.avif"
               alt="Spectrum comic issue covers"
               tilt="right"
               delay={90}

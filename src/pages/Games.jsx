@@ -63,7 +63,7 @@ export default function Games() {
         title="Games | PJ Haarsma"
         description="Writer, designer, and producer of video games — from mobile and web titles to console. Creator of The Super Hero Squad Show game and the Softwire universe games."
         path="/games"
-        image="/original/games.webp"
+        image="/original/games.avif"
       />
       <section className="pjh-g-band pjh-g-band--hero" aria-labelledby="pjh-g-hero-heading">
         <div className="pjh-g-inner">
@@ -85,10 +85,11 @@ export default function Games() {
             </div>
           </div>
           <Frame
-            src="/original/games.webp"
+            src="/original/games.avif"
             alt="Fans chase convention guests in a comic book panel"
             tilt="right"
             delay={120}
+            eager
           />
         </div>
       </section>
@@ -121,16 +122,16 @@ export default function Games() {
               </a>
               <div className="pjh-g-stores">
                 <a href="http://apple.co/2bHvqt6" target="_blank" rel="noreferrer">
-                  <img src="/original/games/badge-apple.webp" alt="Download on the App Store" />
+                  <img src="/original/games/badge-apple.avif" alt="Download on the App Store" loading="lazy" decoding="async" />
                 </a>
                 <a href="http://bit.ly/2bxYcvG" target="_blank" rel="noreferrer">
-                  <img src="/original/games/badge-google.webp" alt="Get it on Google Play" />
+                  <img src="/original/games/badge-google.avif" alt="Get it on Google Play" loading="lazy" decoding="async" />
                 </a>
               </div>
             </div>
           </div>
           <Frame
-            src="/original/games/con-man-kevin-smith.webp"
+            src="/original/games/con-man-kevin-smith.avif"
             alt="Con Man: The Game screenshot of a convention floor"
             tilt="right"
             delay={120}
@@ -138,15 +139,15 @@ export default function Games() {
         </div>
         <div className="pjh-g-inner pjh-g-inner--stat">
           <ToiletStat />
-          <Frame src="/original/games/con-man-wray.webp" alt="Who Wore it Better? Con Man: The Game art" tilt="left" delay={90} />
-          <Frame src="/original/games/con-man-wray-bag.webp" alt="Wray Nerely with a convention bag" tilt="right" delay={180} />
+          <Frame src="/original/games/con-man-wray.avif" alt="Who Wore it Better? Con Man: The Game art" tilt="left" delay={90} />
+          <Frame src="/original/games/con-man-wray-bag.avif" alt="Wray Nerely with a convention bag" tilt="right" delay={180} />
         </div>
       </section>
 
       <section className="pjh-g-band pjh-g-band--paper" aria-labelledby="pjh-g-orbis-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/games/orbis-hatchling.webp"
+            src="/original/games/orbis-hatchling.avif"
             alt="A Rings of Orbis creature hatching from an egg"
             tilt="left"
             tone="paper"
@@ -191,17 +192,17 @@ export default function Games() {
           </div>
         </div>
         <div className="pjh-g-inner pjh-g-shots pjh-g-shots--4">
-          <Frame src="/original/games/orbis-rings.webp" alt="The Rings of Orbis hanging in space" tilt="left" />
-          <Frame src="/original/games/orbis-spaceport.webp" alt="Rings of Orbis spaceport" tilt="right" delay={80} />
-          <Frame src="/original/games/orbis-ship.webp" alt="A Rings of Orbis spacecraft" tilt="left" delay={160} />
-          <Frame src="/original/games/orbis-keepers.webp" alt="Keepers concept art from Rings of Orbis" tilt="right" delay={240} />
+          <Frame src="/original/games/orbis-rings.avif" alt="The Rings of Orbis hanging in space" tilt="left" />
+          <Frame src="/original/games/orbis-spaceport.avif" alt="Rings of Orbis spaceport" tilt="right" delay={80} />
+          <Frame src="/original/games/orbis-ship.avif" alt="A Rings of Orbis spacecraft" tilt="left" delay={160} />
+          <Frame src="/original/games/orbis-keepers.avif" alt="Keepers concept art from Rings of Orbis" tilt="right" delay={240} />
         </div>
       </section>
 
       <section className="pjh-g-band pjh-g-band--ink" aria-labelledby="pjh-g-cards-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/games/cards-house.webp"
+            src="/original/games/cards-house.avif"
             alt="A pyramid of playing cards in the Looking Glass Wars world"
             tilt="right"
           />

@@ -4,19 +4,19 @@ import Seo from '../components/Seo.jsx'
 
 const PRESS = [
   {
-    src: '/original/tv/fast-company.webp',
+    src: '/original/tv/fast-company.avif',
     alt: 'Fast Company: How Con Man rallied geek fans',
     href: 'https://www.fastcocreate.com/3051619/how-con-man-rallied-geek-fans-and-defied-hollywood-convention',
     label: 'Fast Company',
   },
   {
-    src: '/original/tv/orange-coast.webp',
+    src: '/original/tv/orange-coast.avif',
     alt: 'Orange Coast Magazine: Talking with Con Man’s P.J. Haarsma',
     href: 'http://www.orangecoast.com/eventsartist-spotlight/talking-with-p-j-haarsma',
     label: 'Orange Coast',
   },
   {
-    src: '/original/tv/review-fix.webp',
+    src: '/original/tv/review-fix.avif',
     alt: 'Review Fix Exclusive: PJ Haarsma talks Con Man',
     href: 'http://reviewfix.com/2015/10/review-fix-exclusive-pj-haarsma-talks-con-man-sneak-peek/',
     label: 'Review Fix',
@@ -30,7 +30,7 @@ export default function Television() {
         title="Television | PJ Haarsma"
         description="Executive producer and co-showrunner of Con Man with Alan Tudyk and Nathan Fillion. Record-breaking crowdfund, then Lionsgate and Comic-Con HQ."
         path="/television"
-        image="/original/tv-portrait.webp"
+        image="/original/tv-portrait.avif"
       />
       <section className="pjh-g-band pjh-g-band--gold pjh-g-band--lead" aria-labelledby="pjh-tv-hero-heading">
         <div className="pjh-g-inner">
@@ -57,10 +57,11 @@ export default function Television() {
             </div>
           </div>
           <Frame
-            src="/original/tv-portrait.webp?v=2"
+            src="/original/tv-portrait.avif?v=2"
             alt="Alan Tudyk adrift in a paper boat above a giant creature"
             tilt="right"
             delay={120}
+            eager
           />
         </div>
       </section>
@@ -68,7 +69,7 @@ export default function Television() {
       <section className="pjh-g-band pjh-g-band--paper" aria-labelledby="pjh-tv-s1-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/tv/season-1.webp"
+            src="/original/tv/season-1.avif"
             alt="Con Man Season One poster: Alan Tudyk under an umbrella as UFOs attack"
             tilt="left"
             size="md"
@@ -117,7 +118,7 @@ export default function Television() {
             </div>
           </div>
           <Frame
-            src="/original/tv/season-2.webp"
+            src="/original/tv/season-2.avif"
             alt="Con Man Season Two artwork"
             tilt="right"
             delay={120}
@@ -175,7 +176,7 @@ export default function Television() {
           </div>
           <div className="pjh-g-reveal" data-reveal data-reveal-delay="80">
             <figure className="pjh-g-frame pjh-g-frame--left pjh-g-frame--paper">
-              <img src="/original/tv/logos.webp" alt="Lionsgate, Comic-Con HQ, Redbear Films, Amazon Channels, iTunes, and Steam" />
+              <img src="/original/tv/logos.avif" alt="Lionsgate, Comic-Con HQ, Redbear Films, Amazon Channels, iTunes, and Steam" loading="lazy" decoding="async" />
             </figure>
           </div>
         </div>
