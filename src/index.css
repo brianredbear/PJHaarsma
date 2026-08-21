@@ -1045,6 +1045,10 @@ p {
   max-width: 26ch;
 }
 
+.pjh .pjh-footer .pjh-logo {
+  color: var(--ink);
+}
+
 .pjh-footer__nav {
   display: flex;
   flex-wrap: wrap;

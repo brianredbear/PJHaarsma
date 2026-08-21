@@ -8,7 +8,9 @@ export default function Footer() {
       <div className="pjh-footer__shell">
         <div className="pjh-footer__inner" data-reveal>
           <div className="pjh-footer__brand">
-            <img src="/logo.svg" alt="PJ Haarsma" className="pjh-logo__img" loading="lazy" decoding="async" />
+            <Link to="/" className="pjh-logo">
+              PJ Haarsma
+            </Link>
             <p>Connect with PJ across the multiverse.</p>
           </div>
           <nav className="pjh-footer__nav" aria-label="Footer">
