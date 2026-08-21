@@ -154,7 +154,6 @@ export default function Books() {
             src="/original/books.webp"
             alt="The Softwire book covers"
             tilt="right"
-            size="md"
           />
           <div className="pjh-g-copy" data-reveal data-reveal-delay="120">
             <span className="pjh-g-kicker">Novels</span>
