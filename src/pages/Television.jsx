@@ -71,7 +71,7 @@ export default function Television() {
             src="/original/tv/season-1.webp"
             alt="Con Man Season One poster: Alan Tudyk under an umbrella as UFOs attack"
             tilt="left"
-            size="sm"
+            size="md"
           />
           <div className="pjh-g-copy" data-reveal data-reveal-delay="120">
             <span className="pjh-g-kicker">Season One</span>
@@ -121,7 +121,7 @@ export default function Television() {
             alt="Con Man Season Two artwork"
             tilt="right"
             delay={120}
-            size="sm"
+            size="md"
           />
         </div>
       </section>
