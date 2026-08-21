@@ -1,14 +1,5 @@
-import { useEffect, useLayoutEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-
-export function usePageTitle(title) {
-  useEffect(() => {
-    document.title = title
-    return () => {
-      document.title = 'PJ Haarsma — Producer, Novelist, Game Creator'
-    }
-  }, [title])
-}
 
 export function Heading({ as: Tag = 'h2', id, children }) {
   return (

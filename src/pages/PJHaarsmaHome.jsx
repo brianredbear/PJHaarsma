@@ -4,6 +4,7 @@ import PortraitScrub from '../components/PortraitScrub'
 import InkRule from '../components/InkRule.jsx'
 import SocialLinks from '../components/SocialLinks.jsx'
 import { RevealOnScroll } from '../components/WorkPage.jsx'
+import Seo from '../components/Seo.jsx'
 
 /**
  * PJ Haarsma — Homepage
@@ -66,6 +67,12 @@ export default function PJHaarsmaHome() {
 
   return (
     <div className="pjh" data-reveal-root>
+      <Seo
+        title="PJ Haarsma — Producer, Novelist, Game Creator"
+        description="PJ Haarsma is an Emmy-winning producer, science fiction novelist, and game creator. Founder of Redbear Films."
+        path="/"
+        image="/original/tv-portrait.webp"
+      />
       <style>{CSS}</style>
       <RevealOnScroll />
 

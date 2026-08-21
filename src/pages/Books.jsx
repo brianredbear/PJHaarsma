@@ -1,5 +1,6 @@
 import '../work-page.css'
-import { Frame, Heading, usePageTitle } from '../components/WorkPage.jsx'
+import { Frame, Heading } from '../components/WorkPage.jsx'
+import Seo from '../components/Seo.jsx'
 
 const NOVELS = [
   {
@@ -144,10 +145,14 @@ function NovelBand({ book }) {
 }
 
 export default function Books() {
-  usePageTitle('Books | PJ Haarsma')
-
   return (
     <article className="pjh-g">
+      <Seo
+        title="Books | PJ Haarsma"
+        description="The Softwire quartet from Candlewick / Random House: Virus on Orbis 1, Betrayal on Orbis 2, Wormhole Pirates on Orbis 3, and Awakening on Orbis 4."
+        path="/pj-haarsma-books"
+        image="/original/books.webp"
+      />
       <section className="pjh-g-band pjh-g-band--ink pjh-g-band--lead" aria-labelledby="pjh-bk-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame

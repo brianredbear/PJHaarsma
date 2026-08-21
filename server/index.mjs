@@ -21,6 +21,7 @@ const TYPES = {
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
   '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
   '.webm': 'video/webm',
   '.webp': 'image/webp',
   '.woff': 'font/woff',
@@ -64,11 +65,23 @@ const SECURITY_HEADERS = {
   'Cross-Origin-Opener-Policy': 'same-origin',
 }
 
+function indexingHeaders() {
+  try {
+    const robots = fs.readFileSync(path.join(ROOT, 'robots.txt'), 'utf8')
+    if (robots.includes('Disallow: /')) {
+      return { 'X-Robots-Tag': 'noindex, nofollow' }
+    }
+  } catch {
+    return { 'X-Robots-Tag': 'noindex, nofollow' }
+  }
+  return {}
+}
+
 const server = http.createServer(async (req, res) => {
   try {
     const result = await fileToServe(req.url || '/')
     if (result.status !== 200 || !result.filePath) {
-      res.writeHead(result.status, SECURITY_HEADERS)
+      res.writeHead(result.status, { ...SECURITY_HEADERS, ...indexingHeaders() })
       res.end(result.status === 404 ? 'Not found' : 'Bad request')
       return
     }
@@ -83,12 +96,13 @@ const server = http.createServer(async (req, res) => {
           ? 'public, max-age=31536000, immutable'
           : 'public, max-age=3600',
       ...SECURITY_HEADERS,
+      ...indexingHeaders(),
     })
     fs.createReadStream(result.filePath).pipe(res)
   } catch (error) {
     console.error(error)
     if (!res.headersSent) {
-      res.writeHead(500, SECURITY_HEADERS)
+      res.writeHead(500, { ...SECURITY_HEADERS, ...indexingHeaders() })
       res.end('Server error')
     }
   }

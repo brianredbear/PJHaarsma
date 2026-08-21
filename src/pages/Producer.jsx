@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
+import Seo from '../components/Seo.jsx'
 
 export default function Producer() {
   return (
     <article className="pjh-inner">
+      <Seo
+        title="Producer | PJ Haarsma"
+        description="Emmy-winning producer and founder of Redbear Films. Film, television, and brand work from a Southern California company rooted in commercials and original series."
+        path="/pj-haarsma-producer"
+        image="/original/commercials.webp"
+      />
       <PageHeader
         kicker="The Producer"
         title="Film, television, and brands — produced with the same tool chest."

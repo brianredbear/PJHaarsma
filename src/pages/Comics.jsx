@@ -1,11 +1,16 @@
 import '../work-page.css'
-import { Frame, Heading, usePageTitle } from '../components/WorkPage.jsx'
+import { Frame, Heading } from '../components/WorkPage.jsx'
+import Seo from '../components/Seo.jsx'
 
 export default function Comics() {
-  usePageTitle('Comic Books | PJ Haarsma')
-
   return (
     <article className="pjh-g">
+      <Seo
+        title="Comic Books | PJ Haarsma"
+        description="PJ Haarsma writes Spectrum with Alan Tudyk, set in the Softwire universe. The Madefire motion comic won Digital Comic of the Year."
+        path="/comic-books"
+        image="/original/comics.webp"
+      />
       <section className="pjh-g-band pjh-g-band--paper pjh-g-band--lead" aria-labelledby="pjh-cx-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame

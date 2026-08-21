@@ -1,5 +1,6 @@
 import '../work-page.css'
-import { Frame, Heading, usePageTitle } from '../components/WorkPage.jsx'
+import { Frame, Heading } from '../components/WorkPage.jsx'
+import Seo from '../components/Seo.jsx'
 
 const PRESS = [
   {
@@ -23,10 +24,14 @@ const PRESS = [
 ]
 
 export default function Television() {
-  usePageTitle('Television | PJ Haarsma')
-
   return (
     <article className="pjh-g">
+      <Seo
+        title="Television | PJ Haarsma"
+        description="Executive producer and co-showrunner of Con Man with Alan Tudyk and Nathan Fillion. Record-breaking crowdfund, then Lionsgate and Comic-Con HQ."
+        path="/television"
+        image="/original/tv-portrait.webp"
+      />
       <section className="pjh-g-band pjh-g-band--gold pjh-g-band--lead" aria-labelledby="pjh-tv-hero-heading">
         <div className="pjh-g-inner">
           <div className="pjh-g-copy" data-reveal>

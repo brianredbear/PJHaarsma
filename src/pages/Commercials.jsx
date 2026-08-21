@@ -1,6 +1,7 @@
 import '../work-page.css'
-import { Frame, Heading, usePageTitle } from '../components/WorkPage.jsx'
+import { Frame, Heading } from '../components/WorkPage.jsx'
 import RedbearBears from '../components/RedbearBears.jsx'
+import Seo from '../components/Seo.jsx'
 
 const CLIENTS = [
   { src: '/original/commercials/tcb.webp', alt: 'Taco Bell' },
@@ -16,10 +17,14 @@ const CLIENTS = [
 ]
 
 export default function Commercials() {
-  usePageTitle('Commercials | PJ Haarsma')
-
   return (
     <article className="pjh-g">
+      <Seo
+        title="Commercials | PJ Haarsma"
+        description="PJ Haarsma is founder of Redbear Films. Commercial director and producer for brands including Taco Bell, HP, Best Buy, LegalZoom, and Southern California Edison."
+        path="/commercial-production"
+        image="/original/commercials.webp"
+      />
       <section className="pjh-g-band pjh-g-band--paper pjh-g-band--lead" aria-labelledby="pjh-c-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame

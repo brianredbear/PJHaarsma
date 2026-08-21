@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import '../work-page.css'
-import { Frame, Heading, usePageTitle } from '../components/WorkPage.jsx'
+import { Frame, Heading } from '../components/WorkPage.jsx'
+import Seo from '../components/Seo.jsx'
 
 const TOILETS = 1809493
 
@@ -56,10 +57,14 @@ function ToiletStat() {
 }
 
 export default function Games() {
-  usePageTitle('Games | PJ Haarsma')
-
   return (
     <article className="pjh-g">
+      <Seo
+        title="Games | PJ Haarsma"
+        description="Writer, designer, and producer of video games — from mobile and web titles to console. Creator of The Super Hero Squad Show game and the Softwire universe games."
+        path="/games"
+        image="/original/games.webp"
+      />
       <section className="pjh-g-band pjh-g-band--hero" aria-labelledby="pjh-g-hero-heading">
         <div className="pjh-g-inner">
           <div className="pjh-g-copy" data-reveal>
