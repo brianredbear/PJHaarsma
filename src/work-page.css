@@ -572,6 +572,19 @@
   .pjh-g-shots--4 {
     grid-template-columns: minmax(0, 1fr);
   }
+  .pjh-g-actions {
+    width: 100%;
+  }
+  .pjh-g-actions .pjh-g-btn {
+    width: 100%;
+  }
+  .pjh-g-inner--stat .pjh-g-stat {
+    min-height: 0;
+    padding: 1.1rem 1rem;
+  }
+  .pjh-g-stat__num {
+    font-size: clamp(2.1rem, 12vw, 3.2rem);
+  }
   .pjh-g-stores {
     flex-wrap: wrap;
   }

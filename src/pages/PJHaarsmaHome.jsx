@@ -1,25 +1,68 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import PortraitScrub from '../components/PortraitScrub'
 import InkRule from '../components/InkRule.jsx'
-import SocialLinks from '../components/SocialLinks.jsx'
 import { RevealOnScroll } from '../components/WorkPage.jsx'
+import Footer from '../components/Footer.jsx'
 import Seo from '../components/Seo.jsx'
+import { NAV } from '../data/site.js'
 
-/**
- * PJ Haarsma — Homepage
- * Comic-book / Marblism-inspired redesign.
- *
- * Self-contained: all styles live in the <style> block below.
- */
-
-const NAV = [
-  { label: 'TV', href: '/television' },
-  { label: 'Games', href: '/games' },
-  { label: 'Commercials', href: '/commercial-production' },
-  { label: 'Comics', href: '/comic-books' },
-  { label: 'Books', href: '/pj-haarsma-books' },
+const BUBBLE_QUOTES = [
+  '“I produced Con Man with Alan Tudyk and Nathan Fillion.”',
+  '“I wrote the Softwire books — a quartet set in deep space.”',
+  '“I founded Redbear Films and won an Emmy for Journey.”',
 ]
+
+function TypeBubble() {
+  const [index, setIndex] = useState(0)
+  const [shown, setShown] = useState('')
+  const longest = BUBBLE_QUOTES.reduce((a, b) => (a.length >= b.length ? a : b))
+
+  useEffect(() => {
+    const text = BUBBLE_QUOTES[index]
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reduce) {
+      setShown(text)
+      const hold = window.setTimeout(() => {
+        setIndex((current) => (current + 1) % BUBBLE_QUOTES.length)
+      }, 5000)
+      return () => window.clearTimeout(hold)
+    }
+
+    setShown('')
+    let i = 0
+    let typeTimer = 0
+    const startDelay = index === 0 ? 700 : 280
+    const start = window.setTimeout(() => {
+      typeTimer = window.setInterval(() => {
+        i += 1
+        setShown(text.slice(0, i))
+        if (i >= text.length) window.clearInterval(typeTimer)
+      }, 36)
+    }, startDelay)
+
+    const next = window.setTimeout(() => {
+      setIndex((current) => (current + 1) % BUBBLE_QUOTES.length)
+    }, startDelay + text.length * 36 + 5000)
+
+    return () => {
+      window.clearTimeout(start)
+      window.clearInterval(typeTimer)
+      window.clearTimeout(next)
+    }
+  }, [index])
+
+  return (
+    <p>
+      <span className="pjh-bubble__ghost">{longest}</span>
+      <span className="pjh-bubble__typed">
+        {shown}
+        <span className="pjh-bubble__caret" />
+      </span>
+    </p>
+  )
+}
 
 function Section({ bg = 'paper', divider = 'line', children }) {
   return (
@@ -79,7 +122,7 @@ export default function PJHaarsmaHome() {
       <header className="pjh-nav">
         <div className="pjh-nav__inner">
           <Link to="/" className="pjh-logo" onClick={() => setMenuOpen(false)}>
-            <img src="/logo.svg" alt="PJ Haarsma" className="pjh-logo__img" />
+            PJ Haarsma
           </Link>
 
           <nav className="pjh-nav__links" aria-label="Primary">
@@ -126,7 +169,7 @@ export default function PJHaarsmaHome() {
               He is an Emmy winning Producer, Video Game Creator, and Science Fiction Author.
             </p>
             <div className="pjh-hero__cta" data-reveal data-reveal-delay="160">
-              <Link to="/pj-haarsma-producer" className="pjh-btn pjh-btn--red">
+              <Link to="/pj-haarsma-producer" className="pjh-btn pjh-btn--white">
                 See more!
               </Link>
             </div>
@@ -139,7 +182,7 @@ export default function PJHaarsmaHome() {
             </div>
 
             <div className="pjh-bubble" aria-hidden="true">
-              <p>“I produced Con Man with Alan Tudyk and Nathan Fillion.”</p>
+              <TypeBubble />
             </div>
 
             <div className="pjh-sticker pjh-sticker--emmy" aria-hidden="true">
@@ -242,20 +285,7 @@ export default function PJHaarsmaHome() {
         </div>
       </section>
 
-      <Section bg="paper" divider="line">
-        <footer className="pjh-footer">
-          <div className="pjh-footer__inner" data-reveal>
-            <div className="pjh-footer__brand">
-              <img src="/logo.svg" alt="PJ Haarsma" className="pjh-logo__img" />
-              <p>Connect with PJ across the multiverse.</p>
-            </div>
-            <SocialLinks />
-          </div>
-          <div className="pjh-footer__bar">
-            ALL RIGHTS RESERVED © PJ HAARSMA {new Date().getFullYear()}
-          </div>
-        </footer>
-      </Section>
+      <Footer />
     </div>
   )
 }
@@ -517,21 +547,21 @@ const CSS = `
   background-color: var(--work-gold);
   color: var(--work-ink);
   border-color: var(--work-ink);
-  box-shadow: 8px 8px 0 var(--work-red);
+  box-shadow: 8px 8px 0 #fff;
 }
 .pjh-work__btn:hover {
   transform: rotate(-3deg) translate(3px, 3px);
   box-shadow: 5px 5px 0 var(--work-ink);
 }
 .pjh-work__btn--gold:hover {
-  box-shadow: 5px 5px 0 var(--work-red);
+  box-shadow: 5px 5px 0 #fff;
 }
 .pjh-work__btn:active {
   transform: rotate(-3deg) translate(7px, 7px);
   box-shadow: 1px 1px 0 var(--work-ink);
 }
 .pjh-work__btn--gold:active {
-  box-shadow: 1px 1px 0 var(--work-red);
+  box-shadow: 1px 1px 0 #fff;
 }
 .pjh-work__frame {
   border: 4px solid var(--work-ink);
@@ -630,6 +660,10 @@ const CSS = `
   background-color: var(--red);
   color: var(--yellow);
 }
+.pjh-btn--white {
+  background-color: #fff;
+  color: var(--ink);
+}
 .pjh-btn--ghost {
   background-color: var(--panel);
   color: var(--ink);
@@ -667,7 +701,11 @@ const CSS = `
   min-height: 70px;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
 }
-.pjh-logo { display: inline-flex; align-items: center; min-width: 0; }
+.pjh .pjh-logo {
+  display: inline-flex; align-items: center; min-width: 0;
+  font-family: var(--font-sfx); font-weight: 400; font-size: 1.55rem;
+  letter-spacing: .03em; line-height: 1; color: #fff; white-space: nowrap;
+}
 .pjh-logo__img { display: block; height: 48px; width: auto; max-width: min(220px, 52vw); }
 .pjh-nav__links { display: flex; align-items: stretch; gap: 0; margin-left: auto; }
 .pjh-nav__tools { display: flex; align-items: center; gap: .15rem; flex-shrink: 0; }
@@ -796,6 +834,22 @@ const CSS = `
   background: #fff; border: var(--border); border-radius: 16px;
   padding: .8rem 1rem; box-shadow: var(--shadow-sm); font-weight: 700; font-size: .95rem;
 }
+.pjh-bubble p { position: relative; margin: 0; }
+.pjh-bubble__ghost { visibility: hidden; }
+.pjh-bubble__typed { position: absolute; inset: 0; }
+.pjh-bubble__caret {
+  display: inline-block;
+  width: 0.09em;
+  height: 0.95em;
+  margin-left: 0.06em;
+  background: currentColor;
+  vertical-align: -0.1em;
+  animation: pjh-caret .7s steps(1) infinite;
+}
+@keyframes pjh-caret {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
 .pjh-bubble::after {
   content: ""; position: absolute; right: 30px; bottom: -16px;
   border-width: 16px 14px 0 0; border-style: solid;
@@ -811,11 +865,6 @@ const CSS = `
 .pjh-sticker--scifi { top: 40%; right: -8%; background: var(--red); color:#fff; transform: rotate(-8deg); animation-delay: .8s; }
 @keyframes pjh-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -8px; } }
 
-.pjh-band .pjh-footer { margin: 0; padding: 0; border: 0; background: transparent; }
-.pjh-footer__inner {
-  display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;
-}
-.pjh-footer__brand p { font-weight: 600; margin-top: .4rem; max-width: 26ch; }
 .vs-social { display: flex; gap: 14px; }
 .vs-social a {
   display: grid; place-items: center;
@@ -832,17 +881,12 @@ const CSS = `
 .vs-fb:hover { transform: rotate(-4deg) translate(-2px,-2px); }
 .vs-li:hover { transform: rotate(3deg) translate(-2px,-2px); }
 .vs-ig:hover { transform: rotate(-2deg) translate(-2px,-2px); }
-.pjh-footer__bar {
-  border-top: 2px dashed var(--ink); text-align: center;
-  padding: 1.5rem 0 0; margin-top: 2rem;
-  font-family: var(--font-display); font-weight: 600; font-size: .8rem; letter-spacing: .05em;
-}
 
 @media (max-width: 860px) {
   .pjh-nav__links { display: none; }
   .pjh-nav__burger { display: flex; }
   .pjh-nav__inner { padding: 0 1rem; gap: .6rem; }
-  .pjh-logo__img { height: 36px; max-width: min(180px, 58vw); }
+  .pjh .pjh-logo { font-size: 1.25rem; }
   .pjh-nav__search-form input { width: 7.5rem; color: #fff; }
   .pjh-band.pjh-band--paper.pjh-band--none { padding-block: 2rem 2.4rem; }
   .pjh-band .pjh-hero {
@@ -903,13 +947,13 @@ const CSS = `
   .pjh-work__btn { padding: 14px 28px; }
 }
 @media (max-width: 520px) {
-  .pjh-footer__inner { flex-direction: column; align-items: flex-start; }
   .pjh-nav__search-wrap { padding: 0 4px 0 0; }
   .pjh-hero__panel { padding: 12px 4px 4px; }
   .pjh-portrait { border-radius: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .pjh-sticker { animation: none; }
+  .pjh-bubble__caret { animation: none; opacity: 0; }
   .pjh-btn, .vs-social a, .pjh-work__btn { transition: none; }
   .pjh-work__rule,
   .pjh-work__rule path { animation: none; }

@@ -1,4 +1,5 @@
 export const NAV = [
+  { label: 'About', href: '/pj-haarsma-producer' },
   { label: 'TV', href: '/television' },
   { label: 'Games', href: '/games' },
   { label: 'Commercials', href: '/commercial-production' },

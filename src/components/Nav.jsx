@@ -10,7 +10,7 @@ export default function Nav() {
     <header className="pjh-nav">
       <div className="pjh-nav__inner">
         <Link to="/" className="pjh-logo" onClick={() => setMenuOpen(false)}>
-          <img src="/logo.svg" alt="PJ Haarsma" className="pjh-logo__img" />
+          PJ Haarsma
         </Link>
 
         <nav className="pjh-nav__links" aria-label="Primary">
