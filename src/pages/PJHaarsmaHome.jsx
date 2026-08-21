@@ -157,7 +157,7 @@ export default function PJHaarsmaHome() {
               </p>
             </WorkCopy>
             <WorkFrame
-              src="/original/tv-portrait.webp"
+              src="/original/tv-portrait.webp?v=2"
               alt="Alan Tudyk adrift in a paper boat above a giant creature"
               tilt="left"
             />
@@ -168,7 +168,7 @@ export default function PJHaarsmaHome() {
       <section className="pjh-work pjh-work--paper pjh-work--commercials" aria-labelledby="pjh-commercials-heading">
         <div className="pjh-work__inner pjh-work__inner--flip">
           <WorkFrame
-            src="/original/commercials.webp"
+            src="/original/commercials.webp?v=2"
             alt="Not all superheroes wear capes, some wear kilts"
             tilt="left"
           />
@@ -194,7 +194,7 @@ export default function PJHaarsmaHome() {
             </p>
           </WorkCopy>
           <WorkFrame
-            src="/original/games.webp"
+            src="/original/games.webp?v=2"
             alt="Fans chase convention guests in a comic book panel"
             tilt="right"
           />

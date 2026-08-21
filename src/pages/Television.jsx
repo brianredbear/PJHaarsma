@@ -52,7 +52,7 @@ export default function Television() {
             </div>
           </div>
           <Frame
-            src="/original/tv-portrait.webp"
+            src="/original/tv-portrait.webp?v=2"
             alt="Alan Tudyk adrift in a paper boat above a giant creature"
             tilt="right"
             delay={120}
