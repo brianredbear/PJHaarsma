@@ -9,7 +9,7 @@ export default function Comics() {
       <section className="pjh-g-band pjh-g-band--paper pjh-g-band--lead" aria-labelledby="pjh-cx-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/comics.png"
+            src="/original/comics.webp"
             alt="Spectrum comic issue covers"
             tilt="left"
           />
@@ -60,13 +60,13 @@ export default function Comics() {
           </div>
           <div className="pjh-g-cover-pair">
             <Frame
-              src="/original/comics/spectrum-0.jpg"
+              src="/original/comics/spectrum-0.webp"
               alt="Spectrum issue 0 cover, written by PJ Haarsma and Alan Tudyk"
               href="https://store.conmantheseries.com/products/spectrum-comic-issue-0"
               tilt="left"
             />
             <Frame
-              src="/original/comics/spectrum-1.jpg"
+              src="/original/comics/spectrum-1.webp"
               alt="Spectrum issue 1"
               href="https://store.conmantheseries.com/products/spectrum-comic-issue-1"
               tilt="right"
@@ -94,7 +94,7 @@ export default function Comics() {
             </div>
           </div>
           <Frame
-            src="/original/comics/award.png"
+            src="/original/comics/award.webp"
             alt="Pipedream Comics presents Digital Comic of the Year"
             tilt="right"
             tone="clear"

@@ -5,7 +5,7 @@ const NOVELS = [
   {
     kicker: '2006',
     title: 'Virus on Orbis 1',
-    src: '/original/books/virus.jpg',
+    src: '/original/books/virus.webp',
     alt: 'Virus on Orbis 1 cover',
     band: 'paper',
     flip: true,
@@ -43,7 +43,7 @@ const NOVELS = [
   {
     kicker: '2009',
     title: 'Wormhole Pirates on Orbis 3',
-    src: '/original/books/pirates.jpg',
+    src: '/original/books/pirates.webp',
     alt: 'Wormhole Pirates on Orbis 3 cover',
     band: 'paper',
     flip: true,
@@ -59,7 +59,7 @@ const NOVELS = [
   {
     kicker: '2010',
     title: 'Awakening on Orbis 4',
-    src: '/original/books/awakening.jpg',
+    src: '/original/books/awakening.webp',
     alt: 'Awakening on Orbis 4 cover',
     band: 'gold',
     flip: false,
@@ -76,19 +76,19 @@ const NOVELS = [
 
 const GUIDES = [
   {
-    src: '/original/books/teacher.jpg',
+    src: '/original/books/teacher.webp',
     alt: 'Softwire teacher’s study guide',
     href: 'https://pjhaarsma.com/softwire-guides/Softwire_novel_study_sm.pdf.zip',
     label: 'Free teacher’s study guide',
   },
   {
-    src: '/original/books/discussion.jpg',
+    src: '/original/books/discussion.webp',
     alt: 'Softwire small discussion guide',
     href: 'https://pjhaarsma.com/softwire-guides/softwire_discussion_guide.pdf.zip',
     label: 'Free small discussion guide',
   },
   {
-    src: '/original/books/jaal.jpg',
+    src: '/original/books/jaal.webp',
     alt: 'JAAL review of The Softwire',
     href: 'https://pjhaarsma.com/softwire-guides/Journal-Adolescent-Adult-Literacy-PJ-Haarsma-interview.pdf.zip',
     label: 'Read the JAAL review',
@@ -151,7 +151,7 @@ export default function Books() {
       <section className="pjh-g-band pjh-g-band--ink pjh-g-band--lead" aria-labelledby="pjh-bk-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/books.png"
+            src="/original/books.webp"
             alt="The Softwire book covers"
             tilt="right"
             size="md"

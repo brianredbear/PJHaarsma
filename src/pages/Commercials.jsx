@@ -3,16 +3,16 @@ import { Frame, Heading, usePageTitle } from '../components/WorkPage.jsx'
 import RedbearBears from '../components/RedbearBears.jsx'
 
 const CLIENTS = [
-  { src: '/original/commercials/tcb.jpg', alt: 'Taco Bell' },
-  { src: '/original/commercials/sce.jpg', alt: 'Southern California Edison' },
-  { src: '/original/commercials/ps.jpg', alt: 'Public Storage' },
-  { src: '/original/commercials/lz.jpg', alt: 'LegalZoom' },
-  { src: '/original/commercials/hp.jpg', alt: 'HP' },
-  { src: '/original/commercials/bb.jpg', alt: 'Best Buy' },
-  { src: '/original/commercials/inv.jpg', alt: 'Invisalign' },
-  { src: '/original/commercials/frima.jpg', alt: 'Frima' },
-  { src: '/original/commercials/il.jpg', alt: 'iLASIK' },
-  { src: '/original/commercials/hn.jpg', alt: 'Health Net' },
+  { src: '/original/commercials/tcb.webp', alt: 'Taco Bell' },
+  { src: '/original/commercials/sce.webp', alt: 'Southern California Edison' },
+  { src: '/original/commercials/ps.webp', alt: 'Public Storage' },
+  { src: '/original/commercials/lz.webp', alt: 'LegalZoom' },
+  { src: '/original/commercials/hp.webp', alt: 'HP' },
+  { src: '/original/commercials/bb.webp', alt: 'Best Buy' },
+  { src: '/original/commercials/inv.webp', alt: 'Invisalign' },
+  { src: '/original/commercials/frima.webp', alt: 'Frima' },
+  { src: '/original/commercials/il.webp', alt: 'iLASIK' },
+  { src: '/original/commercials/hn.webp', alt: 'Health Net' },
 ]
 
 export default function Commercials() {
@@ -23,7 +23,7 @@ export default function Commercials() {
       <section className="pjh-g-band pjh-g-band--paper pjh-g-band--lead" aria-labelledby="pjh-c-hero-heading">
         <div className="pjh-g-inner pjh-g-inner--flip">
           <Frame
-            src="/original/commercials.png"
+            src="/original/commercials.webp"
             alt="Not all superheroes wear capes, some wear kilts"
             tilt="left"
           />
@@ -78,7 +78,7 @@ export default function Commercials() {
             <div className="pjh-g-redbear">
               <RedbearBears />
               <figure className="pjh-g-frame pjh-g-frame--paper">
-                <img src="/original/commercials/redbear.png" alt="Redbear Films" />
+                <img src="/original/commercials/redbear.webp" alt="Redbear Films" />
               </figure>
             </div>
           </div>

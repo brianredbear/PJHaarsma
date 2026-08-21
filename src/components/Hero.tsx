@@ -14,7 +14,7 @@ const PILLS = [
 ] as const
 
 function frameSrc(index: number) {
-  return `/hero-frames/frame-${String(index).padStart(3, '0')}.jpg?v=full`
+  return `/hero-frames/frame-${String(index).padStart(3, '0')}.webp?v=full`
 }
 
 function CopyIcon() {

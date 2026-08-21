@@ -157,7 +157,7 @@ export default function PJHaarsmaHome() {
               </p>
             </WorkCopy>
             <WorkFrame
-              src="/original/tv-portrait.png"
+              src="/original/tv-portrait.webp"
               alt="Alan Tudyk adrift in a paper boat above a giant creature"
               tilt="left"
             />
@@ -168,7 +168,7 @@ export default function PJHaarsmaHome() {
       <section className="pjh-work pjh-work--paper pjh-work--commercials" aria-labelledby="pjh-commercials-heading">
         <div className="pjh-work__inner pjh-work__inner--flip">
           <WorkFrame
-            src="/original/commercials.png"
+            src="/original/commercials.webp"
             alt="Not all superheroes wear capes, some wear kilts"
             tilt="left"
           />
@@ -194,7 +194,7 @@ export default function PJHaarsmaHome() {
             </p>
           </WorkCopy>
           <WorkFrame
-            src="/original/games.png"
+            src="/original/games.webp"
             alt="Fans chase convention guests in a comic book panel"
             tilt="right"
           />
@@ -204,7 +204,7 @@ export default function PJHaarsmaHome() {
       <section className="pjh-work pjh-work--paper pjh-work--comics" aria-labelledby="pjh-comics-heading">
         <div className="pjh-work__inner pjh-work__inner--flip">
           <WorkFrame
-            src="/original/comics.png"
+            src="/original/comics.webp"
             alt="Spectrum comic issue covers"
             tilt="left"
           />
@@ -221,7 +221,7 @@ export default function PJHaarsmaHome() {
       <section className="pjh-work pjh-work--books" aria-labelledby="pjh-books-heading">
         <div className="pjh-work__inner pjh-work__inner--flip">
           <WorkFrame
-            src="/original/books.png"
+            src="/original/books.webp"
             alt="The Softwire book covers"
             tilt="right"
           />

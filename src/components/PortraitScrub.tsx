@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 const FRAME_COUNT = 111
 
 function frameSrc(index: number) {
-  return `/hero-frames/frame-${String(index).padStart(3, '0')}.jpg?v=full`
+  return `/hero-frames/frame-${String(index).padStart(3, '0')}.webp?v=full`
 }
 
 export default function PortraitScrub() {
