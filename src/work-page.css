@@ -366,6 +366,7 @@
 .pjh-g-frame--left { transform: rotate(-1.5deg); }
 .pjh-g-frame--right { transform: rotate(1.5deg); }
 .pjh-g-frame--paper { background: #fff; }
+.pjh-g-frame--clear { background: transparent; }
 .pjh-g-band--ink .pjh-g-frame {
   border-color: var(--work-gold);
   box-shadow: 14px 14px 0 var(--work-gold);

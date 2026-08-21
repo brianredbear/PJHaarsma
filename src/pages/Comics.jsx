@@ -97,7 +97,7 @@ export default function Comics() {
             src="/original/comics/award.png"
             alt="Pipedream Comics presents Digital Comic of the Year"
             tilt="right"
-            tone="paper"
+            tone="clear"
             delay={120}
             size="md"
           />
